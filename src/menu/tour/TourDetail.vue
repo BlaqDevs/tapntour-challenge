@@ -1,6 +1,6 @@
 <template>
 
-    <div class="bg-black top-10 text-lg pt-10 w-full h-full">
+    <div class=" top-10 text-lg pt-10 w-full h-full">
         <div class="flex mb-2" >
          <button @click="$router.go(-1)"  type="submit" class="ml-2">
             <span class="text-white">
@@ -9,8 +9,12 @@
              </svg>
             </span>
         </button>
-        <span class="text-xl font-semibold ml-2 " >Cambridge</span>
+        <span class="text-xl font-semibold ml-2 " >{{ tour.name }}</span>
         </div>
+        <pre>
+            
+        {{ tour }}
+        </pre>
         
         <div class="text-sm text-gray-400 font-light p-5">What action would you like to perform? </div>
 
@@ -26,3 +30,16 @@
         
     </div>
 </template>
+
+<script setup>
+import { onMounted } from 'vue';
+import { storeToRefs } from 'pinia';
+import { useRoute } from 'vue-router';
+import { useTourStore } from '@/stores/tour';
+
+const {fetchTourById} = useTourStore()
+const {tour}= storeToRefs(useTourStore())
+const route = useRoute()
+
+    fetchTourById(route.params.id)
+</script>
