@@ -8,10 +8,10 @@
     <ListView>
       <p v-if="loading">Loading tours...</p>
       <p v-if="error">{{ error.message }}</p>
-      <pre>
+      <!-- <pre>
 
       {{ tours }}
-      </pre>
+      </pre> -->
       <li v-for="tour in tours" :key="tour.id">
         <span @click="viewDetails(tour.id)">
           {{ tour.name }}
@@ -36,7 +36,7 @@ import NavView from "@/components/NavView.vue";
 import NavItem from "@/components/NavItem.vue";
  
 
-const { tours, loading, error } = storeToRefs(useTourStore());
+const { tours, tour, loading, error } = storeToRefs(useTourStore());
 const { fetchTours } = useTourStore();
 fetchTours();
 
