@@ -7,6 +7,7 @@
     <ListView>
       <p v-if="loading">Loading tours...</p>
       <p v-if="error">{{ error.message }}</p>
+     
       <div v-if="guides">
       <GuideItem v-for="(item, index) in guides" :key="index" :item="item" />
       </div>

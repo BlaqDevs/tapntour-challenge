@@ -3,6 +3,7 @@
 <TourList></TourList>
 </div>
 </template>
+
 <script>
 import TourList from '@/menu/tour/TourList.vue'
 
