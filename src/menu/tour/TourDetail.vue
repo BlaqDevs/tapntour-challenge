@@ -16,7 +16,7 @@
     </div>
       <div class="text-center mt-5">
 
-       <router-link to="/tours" class=" pa-5" > &#8592 Back </router-link>
+       <router-link to="/tours" class=" pa-5" > &#8592; Back </router-link>
       </div>
     </div>
 
